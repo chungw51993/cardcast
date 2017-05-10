@@ -7,7 +7,7 @@ angular.module('cardcast', [
   'cardcast.edit'
 ])
 
-.config(function($routeProvider, $httpProvider) {
+.config(function($routeProvider, $locationProvider) {
 
   // these functions are used in the resolve property of routes
   // the route will only proceed if all promises in resolve are not rejected
@@ -69,6 +69,11 @@ angular.module('cardcast', [
     })
     .otherwise({
       redirectTo: '/login'
+    });
+
+    $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
     });
 })
 
