@@ -70,11 +70,6 @@ angular.module('cardcast', [
     .otherwise({
       redirectTo: '/login'
     });
-
-    $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-    });
 })
 
 .run(function($rootScope, $location, $timeout, Auth) {
