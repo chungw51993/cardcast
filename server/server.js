@@ -35,6 +35,9 @@ app.use(bodyParser.json());
 // initialize passport
 require('./passport/init')(passport);
 
+// serve static files
+app.use(express.static(path.join(__dirname, '../clients/')));
+
 // use routes
 // notice how the initialized passport object is passed to the users router
 app.use('/', clients);
