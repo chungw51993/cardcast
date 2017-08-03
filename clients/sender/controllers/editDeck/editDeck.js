@@ -7,7 +7,7 @@ angular.module('cardcast.editDeck', [
   $scope.deck = deck;
   $scope.heading = deck.deckInfo.title;
 
-  document.getElementsByClassName(".deck-edit").className += 'is-dirty';
+  document.getElementsByClassName('.deck-edit').className += 'is-dirty';
 
   $scope.updateDeck = function () {
     var deckInfo = {

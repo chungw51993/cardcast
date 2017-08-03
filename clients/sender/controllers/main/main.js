@@ -26,7 +26,7 @@ angular.module('cardcast.main', [])
     $scope.showNote = true;
   };
 
-  $scope.renderAlternate = function(card){
+  $scope.renderAlternate = function(card) {
     $scope.currentCard = card;
     $scope.showNoteAlternate = true;
     var notes = document.querySelector('#note-popup-notes');
@@ -96,7 +96,7 @@ angular.module('cardcast.main', [])
   $scope.castCard = function(card, clear = false) {
     var message = {
       username: clear ? null : user,
-      userDisplay: clear? null : '<div class="material-icons userDisplay" id="userDisplay">perm_identity</div>  ' + user,
+      userDisplay: clear ? null : '<div class="material-icons userDisplay" id="userDisplay">perm_identity</div>  ' + user,
       card: clear ? '<h2>Welcome to CardCast!</h2><br/>Nothing has been casted yet...' : card.card,
       cardId: clear ? null : card._id,
       color: clear ? null : card.color,

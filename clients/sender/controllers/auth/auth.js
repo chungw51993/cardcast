@@ -1,7 +1,7 @@
 angular.module('cardcast.auth', [])
 
 .controller('AuthCtrl', function($scope, $location, $timeout, Auth) {
-  
+
   $scope.username = '';
   $scope.password = '';
   $scope.check = '';

@@ -46,17 +46,17 @@ angular.module('cardcast.service', [])
     },
 
     getAllDecks: function() {
-       return $http({
-         method: 'GET',
-         url: '/api/decks',
-       })
-       .then(function(resp) {
-         return resp.data;
-       })
-       .catch(function(err) {
-         console.log(err);
-       })
-     },
+      return $http({
+        method: 'GET',
+        url: '/api/decks',
+      })
+      .then(function(resp) {
+        return resp.data;
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+    },
 
     createDeck: function (deck) {
       return $http({
@@ -71,7 +71,7 @@ angular.module('cardcast.service', [])
         method: 'POST',
         url: '/api/decks/' + deck._id,
         data: deck
-      })
+      });
     },
 
     updateDeck: function (deck) {
@@ -79,7 +79,7 @@ angular.module('cardcast.service', [])
         method: 'PUT',
         url: '/api/decks/' + deck.id,
         data: deck
-      })
+      });
     },
 
     // Function that makes post request to '/api/cards' to insert new card into db

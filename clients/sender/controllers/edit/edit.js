@@ -10,7 +10,7 @@ angular.module('cardcast.edit', [
   $scope.card.font = card.font;
   $scope.card.color = card.color;
 
-  var checkedFont = document.querySelector("#" + $scope.card.font);
+  var checkedFont = document.querySelector('#' + $scope.card.font);
   checkedFont.setAttribute('checked', 'true');
 
   // set color attribute to equal selected
@@ -51,7 +51,6 @@ angular.module('cardcast.edit', [
     // Use the updateCard function from the Service factory
     Service.updateCard(cardInfo)
       .then(function(resp) {
-        console.log(cardInfo);
         $location.path('/decks/' + $scope.card.deck);
       })
       .catch(console.log);
