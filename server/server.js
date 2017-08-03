@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, '../clients/')));
 app.use('/', clients);
 app.use('/api/users', users(passport));
 app.use('/api/cards', cards);
-
+app.use('/api/decks', decks);
 
 // catch 404 errors
 app.use('*', (req, res, next) => {

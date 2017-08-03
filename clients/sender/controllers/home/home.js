@@ -3,7 +3,7 @@ angular.module('cardcast.home', [
 ])
 
 .controller('HomeCtrl', function ($scope, $location, Service, user, allDecks) {
-
+  console.log(allDecks);
   $scope.allDecks = allDecks;
   $scope.currentDeck;
   $scope.username = user;
