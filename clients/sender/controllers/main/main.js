@@ -49,7 +49,6 @@ angular.module('cardcast.main', [])
 
     // if there is an active session and no one is casting, cast the card
     if (session && !isCasting) {
-      console.log(session.status);
       $scope.castCard(card);
 
       //show popup of casted card with note

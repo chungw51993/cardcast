@@ -29,7 +29,7 @@
 
 <!-- Iterates through all the users cards and displays them -->
 <div class="row">
-<div ng-repeat="card in deck">
+<div ng-repeat="card in deck track by $index">
 
   <div class="col-sm-4">
 
@@ -42,7 +42,7 @@
       <div class="mdl-card__supporting-text" style="height: 130px; margin-left: 5px">{{ card.card }}</div>
 
       <div class="mdl-card__actions mdl-card--border" style="position: absolute; bottom: 0; width: 100%; z-index: 5">
-        <a href="#!/edit/{{ card._id }}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">Edit</button></a>
+        <a href="/edit/{{ card._id }}"><button class="mdl-button mdl-js-button mdl-js-ripple-effect">Edit</button></a>
         <input type="button" value="Delete" class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="warnDelete(card)"/>
 
         <!-- Displays 'Notes' with associated behavior for all cards not being casted -->
@@ -192,6 +192,6 @@
 </div>
 
 <!-- Add Card Button -->
-<a href="#!/new" class="add-card mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent mdl-shadow--4dp">
+<a href="/new" class="add-card mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent mdl-shadow--4dp">
   <i class="material-icons">add</i>
 </a>
