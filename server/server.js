@@ -6,6 +6,7 @@ var path = require('path');
 var clients = require('./routes/clients');
 var users = require('./routes/users');
 var cards = require('./routes/cards');
+var decks = require('./routes/decks');
 
 // make bluebird the default Promise Library
 global.Promise = mongoose.Promise = require('bluebird');
@@ -42,15 +43,11 @@ app.use(express.static(path.join(__dirname, '../clients/')));
 app.use('/', clients);
 app.use('/api/users', users(passport));
 app.use('/api/cards', cards);
-app.use('*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../clients/sender/index.html'));
-});
+app.use('/api/decks', decks);
 
 // catch 404 errors
-app.use((req, res, next) => {
-  var err = new Error('ERROR 404 Sorry can\'t find what you\'re looking for!');
-  err.status = 404;
-  next(err);
+app.use('*', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../clients/sender/index.html'));
 });
 
 // error handler
